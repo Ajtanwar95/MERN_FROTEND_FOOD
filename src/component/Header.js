@@ -13,70 +13,85 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleShowMenu = () => {
-    setShowMenu((preve) => !preve);
+    setShowMenu((prev) => !prev);
   };
+
   const handleLogout = () => {
     dispatch(logoutRedux());
     toast("Logout successfully");
   };
 
   const cartItemNumber = useSelector((state) => state.product.cartItem);
+
   return (
     <header className="fixed shadow-md w-full h-[80px] px-2 md:px-4 z-50 bg-white">
-      {/* desktop */}
-
-      <div className="flex items-center h-full justify-between">
+      {/* Desktop Header */}
+      <div className="hidden md:flex items-center h-full justify-between">
         <Link to={""}>
           <div className="h-[70px] w-[922px]">
-            <img src={logo} className=" h-full animate-bounce w-[100px]" />
+            <img
+              src={logo}
+              className="h-full animate-bounce w-[100px]"
+              alt="Logo"
+            />
           </div>
         </Link>
 
-        <div className="flex items-center gap-4 md:gap-7">
-          <nav className="gap-4 md:gap-6 text-base md:text-lg hidden md:flex ">
-            <Link
-              className="hover:text-slate-100 transition duration-300 hover:rounded-md"
-              to={""}
-            >
-              Home
-            </Link>
-            <Link
-              className="hover:text-slate-100 transition duration-300 hover:rounded-md"
-              to={"menu/63f0fdbb3bcc2f97fa53d25d"}
-            >
-              Menu
-            </Link>
-            <Link
-              className="hover:text-slate-100 transition duration-300 hover:rounded-md"
-              to={"about"}
-            >
-              About
-            </Link>
-            <Link
-              className="hover:text-slate-100 transition duration-300 hover:rounded-md"
-              to={"contact"}
-            >
-              Contact
-            </Link>
-          </nav>
-          <div className="text-2xl text-slate-600 relative animate-bounce">
-            <Link to={"cart"}>
-              <BsCartFill />
-              <div className="absolute -top-1 -right-1 text-white bg-red-500 h-4 w-4 rounded-full m-0 p-0 text-sm text-center ">
-                {cartItemNumber.length}
-              </div>
-            </Link>
+        <nav className="gap-4 md:gap-6 text-base md:text-lg hidden md:flex ">
+          <Link
+            className="hover:text-slate-100 transition duration-300 hover:rounded-md"
+            to={""}
+          >
+            Home
+          </Link>
+          <Link
+            className="hover:text-slate-100 transition duration-300 hover:rounded-md"
+            to={"menu/63f0fdbb3bcc2f97fa53d25d"}
+          >
+            Menu
+          </Link>
+          <Link
+            className="hover:text-slate-100 transition duration-300 hover:rounded-md"
+            to={"about"}
+          >
+            About
+          </Link>
+          <Link
+            className="hover:text-slate-100 transition duration-300 hover:rounded-md"
+            to={"contact"}
+          >
+            Contact
+          </Link>
+        </nav>
+      </div>
+
+      {/* Mobile Header */}
+      <div className="md:hidden flex items-center justify-between">
+        <Link to={""}>
+          <div className="h-[70px] w-[200px]">
+            <img
+              src={logo}
+              className="h-full animate-bounce w-full"
+              alt="Logo"
+            />
           </div>
+        </Link>
+
+        <div className="flex items-center gap-4">
           <div className=" text-slate-600" onClick={handleShowMenu}>
             <div className="text-3xl cursor-pointer w-8 h-8 rounded-full overflow-hidden drop-shadow-md">
               {userData.image ? (
-                <img src={userData.image} className="h-full w-full" />
+                <img
+                  src={userData.image}
+                  className="h-full w-full"
+                  alt="User"
+                />
               ) : (
                 <HiOutlineUserCircle />
               )}
             </div>
             {showMenu && (
-              <div className="absolute right-2 bg-white py-2  shadow drop-shadow-md flex flex-col min-w-[120px] text-center">
+              <div className="absolute top-16 right-0 bg-white py-2 shadow drop-shadow-md flex flex-col min-w-[120px] text-center">
                 {userData.email === process.env.REACT_APP_ADMIN_EMAIL && (
                   <Link
                     to={"newproduct"}
@@ -121,10 +136,17 @@ const Header = () => {
               </div>
             )}
           </div>
+
+          <Link to={"cart"}>
+            <div className="text-2xl text-slate-600 relative animate-bounce">
+              <BsCartFill />
+              <div className="absolute -top-1 -right-1 text-white bg-red-500 h-4 w-4 rounded-full m-0 p-0 text-sm text-center">
+                {cartItemNumber.length}
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
-
-      {/* mobile */}
     </header>
   );
 };
