@@ -220,7 +220,7 @@ import Wrapper from "./Wrapper";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <footer className="bg-black text-white pt-14 pb-3">
+    <footer className=" bg-slate-200 text-black pt-14 pb-3 rounded-2xl">
       <Wrapper className="flex justify-between flex-col md:flex-row gap-[50px] md:gap-0">
         {/* LEFT START */}
         <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row">
@@ -251,19 +251,19 @@ const Footer = () => {
               <div className="font-oswald font-medium uppercase text-sm">
                 get help
               </div>
-              <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+              <div className="text-sm text-black/[0.5] hover:text-white cursor-pointer">
                 Order Status
               </div>
-              <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+              <div className="text-sm text-black/[0.5] hover:text-white cursor-pointer">
                 Delivery
               </div>
-              <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+              <div className="text-sm text-black/[0.5] hover:text-white cursor-pointer">
                 Returns
               </div>
-              <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+              <div className="text-sm text-black/[0.5] hover:text-white cursor-pointer">
                 Payment Options
               </div>
-              <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+              <div className="text-sm text-black/[0.5] hover:text-white cursor-pointer">
                 Contact Us
               </div>
             </div>
@@ -274,16 +274,16 @@ const Footer = () => {
               <div className="font-oswald font-medium uppercase text-sm">
                 About nike
               </div>
-              <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+              <div className="text-sm text-black/[0.5] hover:text-white cursor-pointer">
                 News
               </div>
-              <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+              <div className="text-sm text-black/[0.5] hover:text-white cursor-pointer">
                 Careers
               </div>
-              <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+              <div className="text-sm text-black/[0.5] hover:text-white cursor-pointer">
                 Investors
               </div>
-              <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
+              <div className="text-sm text-black/[0.5] hover:text-white cursor-pointer">
                 Sustainability
               </div>
             </div>
@@ -297,17 +297,17 @@ const Footer = () => {
         <div className="flex gap-4 justify-center md:justify-start">
           <div
             onClick={() => window.open("https://facebook.com", "_blank")}
-            className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
+            className="w-10 h-10 rounded-full bg-black/[0.25] animate-bounce flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
           >
             <FaFacebookF size={20} />
           </div>
           <div
             href="https://twitter.com"
-            className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
+            className="w-10 h-10 rounded-full bg-black/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
           >
             <FaTwitter size={20} />
           </div>
-          <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer">
+          <div className="w-10 h-10 rounded-full animate-bounce bg-black/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer">
             <div
               onClick={() => window.open("https://www.youtube.com/", "_blank")}
             >
@@ -315,7 +315,7 @@ const Footer = () => {
             </div>
           </div>
           <div href="https://www.instagram.com/">
-            <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer">
+            <div className="w-10 h-10 rounded-full bg-black/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer">
               <FaInstagram size={20} />
             </div>
           </div>
@@ -324,23 +324,23 @@ const Footer = () => {
       </Wrapper>
       <Wrapper className="flex justify-between mt-10 flex-col md:flex-row gap-[10px] md:gap-0">
         {/* LEFT START */}
-        <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer text-center md:text-left">
+        <div className="text-[12px] text-black/[0.5] hover:text-white cursor-pointer text-center md:text-left">
           © 2023 Nike, Inc. All Rights Reserved
         </div>
         {/* LEFT END */}
 
         {/* RIGHT START */}
         <div className="flex gap-2 md:gap-5 text-center md:text-left flex-wrap justify-center">
-          <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
+          <div className="text-[12px] text-black/[0.5] hover:text-white cursor-pointer">
             Guides
           </div>
-          <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
+          <div className="text-[12px] text-black/[0.5] hover:text-white cursor-pointer">
             Terms of Sale
           </div>
-          <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
+          <div className="text-[12px] text-black/[0.5] hover:text-white cursor-pointer">
             Terms of Use
           </div>
-          <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
+          <div className="text-[12px] text-black/[0.5] hover:text-white cursor-pointer">
             Privacy Policy
           </div>
         </div>
